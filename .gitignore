@@ -64,3 +64,4 @@ crashlytics-build.properties
 *.meta
 APDEV MP - Fisticuffs/Library/SourceAssetDB
 APDEV MP - Fisticuffs/Library/ArtifactDB
+*.log
