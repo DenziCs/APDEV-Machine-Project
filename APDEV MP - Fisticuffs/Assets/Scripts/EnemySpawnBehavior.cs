@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawnBehavior : MonoBehaviour
 {
     [SerializeField] private Camera mainCam;
+    [SerializeField] private GameObject boss;
     [SerializeField] private GameObject greenBoulder;
     [SerializeField] private GameObject redPage;
     [SerializeField] private GameObject blueBlade;
@@ -50,20 +51,38 @@ public class EnemySpawnBehavior : MonoBehaviour
         switch (spawnIndex)
         {
             case 0:
+            case 1:
                 GameObject enemy1 = SpawnEnemy(this.greenBoulder);
                 Vector3 position = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
                 enemy1.transform.position = position;
                 GameObject enemy2 = SpawnEnemy(this.greenBoulder);
-                Vector3 position2 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                Vector3 position2 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, 10f));
                 enemy2.transform.position = position2;
-                break;
-            case 1:
-                GameObject enemy3 = SpawnEnemy(this.redPage);
-                Vector3 position3 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
+                GameObject enemy3 = SpawnEnemy(this.greenBoulder);
+                Vector3 position3 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
                 enemy3.transform.position = position3;
+                break;
+            case 2:
                 GameObject enemy4 = SpawnEnemy(this.redPage);
-                Vector3 position4 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                Vector3 position4 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
                 enemy4.transform.position = position4;
+                GameObject enemy5 = SpawnEnemy(this.redPage);
+                Vector3 position5 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, 10f));
+                enemy5.transform.position = position5;
+                GameObject enemy6 = SpawnEnemy(this.redPage);
+                Vector3 position6 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                enemy6.transform.position = position6;
+                break;
+            case 3:
+                GameObject enemy7 = SpawnEnemy(this.blueBlade);
+                Vector3 position7 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
+                enemy7.transform.position = position7;
+                GameObject enemy8 = SpawnEnemy(this.blueBlade);
+                Vector3 position8 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, 10f));
+                enemy8.transform.position = position8;
+                GameObject enemy9 = SpawnEnemy(this.blueBlade);
+                Vector3 position9 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                enemy9.transform.position = position9;
                 break;
         }
     }
@@ -85,12 +104,13 @@ public class EnemySpawnBehavior : MonoBehaviour
             {
                 this.timer = 0f;
                 this.DespawnFleet();
-                int spawnIndex = Random.Range(0, 2);
+                int spawnIndex = Random.Range(0, 4);
                 this.SpawnFleet(spawnIndex);
             }
 
             if(this.totalTime >= 120f)
             {
+                this.boss.SetActive(true);
                 this.bossMode = true;
             }
         }
