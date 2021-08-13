@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnBehavior : MonoBehaviour
 {
+    [SerializeField] private Camera mainCam;
     [SerializeField] private GameObject greenBoulder;
     [SerializeField] private GameObject redPage;
     [SerializeField] private GameObject blueBlade;
@@ -50,7 +51,19 @@ public class EnemySpawnBehavior : MonoBehaviour
         {
             case 0:
                 GameObject enemy1 = SpawnEnemy(this.greenBoulder);
+                Vector3 position = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
+                enemy1.transform.position = position;
                 GameObject enemy2 = SpawnEnemy(this.greenBoulder);
+                Vector3 position2 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                enemy2.transform.position = position2;
+                break;
+            case 1:
+                GameObject enemy3 = SpawnEnemy(this.redPage);
+                Vector3 position3 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
+                enemy3.transform.position = position3;
+                GameObject enemy4 = SpawnEnemy(this.redPage);
+                Vector3 position4 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                enemy4.transform.position = position4;
                 break;
         }
     }
@@ -72,7 +85,13 @@ public class EnemySpawnBehavior : MonoBehaviour
             {
                 this.timer = 0f;
                 this.DespawnFleet();
-                this.SpawnFleet(Random.Range(0, 10));
+                int spawnIndex = Random.Range(0, 2);
+                this.SpawnFleet(spawnIndex);
+            }
+
+            if(this.totalTime >= 120f)
+            {
+                this.bossMode = true;
             }
         }
     }
