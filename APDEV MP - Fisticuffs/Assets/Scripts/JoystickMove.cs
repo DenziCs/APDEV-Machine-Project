@@ -12,6 +12,6 @@ public class JoystickMove : MonoBehaviour
     {
         float x = joystick.JoystickAxis.x;
         float y = joystick.JoystickAxis.y;
-        transform.Translate(x * speed * Time.deltaTime, y * speed * Time.deltaTime, 0);
+        transform.Translate(x * speed * Time.deltaTime, 0, y * speed * Time.deltaTime);
     }
 }
