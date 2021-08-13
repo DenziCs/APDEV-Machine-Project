@@ -2913,6 +2913,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1596139641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3706537247758843509, guid: cedbf6145645f494f9bbbdc2e1e017ac, type: 3}
+  m_PrefabInstance: {fileID: 6834371140496138861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1596139648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596139641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a281437417d78d45b10970419bffbfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  joystick: {fileID: 806666789}
 --- !u!850595691 &1642318723
 LightingSettings:
   m_ObjectHideFlags: 0
