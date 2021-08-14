@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemySpawnBehavior : MonoBehaviour
 {
     [SerializeField] private Camera mainCam;
+    [SerializeField] private Gold goldHandler;
+    [SerializeField] private Score scoreHandler;
+
     [SerializeField] private GameObject boss;
     [SerializeField] private GameObject greenBoulder;
     [SerializeField] private GameObject redPage;
@@ -17,6 +20,7 @@ public class EnemySpawnBehavior : MonoBehaviour
     private float timer = 0f;
     
     private int waveNumber = 1;
+    private int killCount = 0;
     private bool waveIsActive = true;
     private bool bossMode = false;
 
@@ -146,9 +150,16 @@ public class EnemySpawnBehavior : MonoBehaviour
 
         else
         {
+            if(this.killCount >= 8)
+            {
+                this.scoreHandler.AddScore(400);
+                this.goldHandler.GainGold(20);
+            }
+
             if(this.timer >= this.waveInterval)
             {
                 this.timer = 0f;
+                this.killCount = 0;
                 this.waveNumber += 1;
                 this.waveIsActive = true;
             }

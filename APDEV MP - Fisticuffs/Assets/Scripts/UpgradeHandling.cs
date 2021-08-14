@@ -24,7 +24,7 @@ public class UpgradeHandling : MonoBehaviour
 
         else
         {
-            if (goldHandler.UseGold(500))
+            if (goldHandler.UseGold(50))
             {
                 upgradeCountFR += 1;
                 switch (upgradeCountFR)
@@ -48,7 +48,7 @@ public class UpgradeHandling : MonoBehaviour
 
         else
         {
-            if (goldHandler.UseGold(500)) healthHandler.HealDamage(1f);
+            if (goldHandler.UseGold(25)) healthHandler.HealDamage(1f);
         }
     }
 
