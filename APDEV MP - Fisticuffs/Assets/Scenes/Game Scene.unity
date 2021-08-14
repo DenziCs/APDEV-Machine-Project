@@ -254,6 +254,10 @@ PrefabInstance:
       value: Red Page Plane
       objectReference: {fileID: 0}
     - target: {fileID: 2538151129878789683, guid: 9fd7fb29b69007c48a537b5b0c78cb6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2538151129878789683, guid: 9fd7fb29b69007c48a537b5b0c78cb6f, type: 3}
       propertyPath: m_TagString
       value: EnemyShip
       objectReference: {fileID: 0}
@@ -289,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  mainCam: {fileID: 1447492567}
 --- !u!1 &180028806
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +396,10 @@ PrefabInstance:
       value: Blue Blade Scissors
       objectReference: {fileID: 0}
     - target: {fileID: 1436394008601465008, guid: be0d19bd639d9d349a2f7321e5281002, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436394008601465008, guid: be0d19bd639d9d349a2f7321e5281002, type: 3}
       propertyPath: m_TagString
       value: EnemyShip
       objectReference: {fileID: 0}
@@ -470,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  mainCam: {fileID: 1447492567}
 --- !u!1 &289784959
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +742,10 @@ PrefabInstance:
       value: Green Boulder Meteor
       objectReference: {fileID: 0}
     - target: {fileID: 7832773627517682542, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832773627517682542, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
       propertyPath: m_TagString
       value: EnemyShip
       objectReference: {fileID: 0}
@@ -755,6 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  mainCam: {fileID: 1447492567}
 --- !u!1 &600949153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.8
+  mainCam: {fileID: 0}
 --- !u!1 &1799511774
 GameObject:
   m_ObjectHideFlags: 0

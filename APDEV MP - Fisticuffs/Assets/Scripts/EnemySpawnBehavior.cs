@@ -9,11 +9,15 @@ public class EnemySpawnBehavior : MonoBehaviour
     [SerializeField] private GameObject greenBoulder;
     [SerializeField] private GameObject redPage;
     [SerializeField] private GameObject blueBlade;
-    [SerializeField] private float spawnInterval;
+    [SerializeField] private float waveLength = 25f;
+    [SerializeField] private float waveInterval = 5f;
+    [SerializeField] private int bossWaveNumber;
 
     public List<GameObject> enemyList;
-    private float totalTime = 0f;
     private float timer = 0f;
+    
+    private int waveNumber = 1;
+    private bool waveIsActive = true;
     private bool bossMode = false;
 
     private GameObject SpawnEnemy(GameObject templateObject)
@@ -48,41 +52,58 @@ public class EnemySpawnBehavior : MonoBehaviour
 
     private void SpawnFleet(int spawnIndex)
     {
+        GameObject enemy1 = null;
+        GameObject enemy2 = null;
+        GameObject enemy3 = null;
+
+        Vector3 position1;
+        Vector3 position2;
+        Vector3 position3;
+
         switch (spawnIndex)
         {
             case 0:
             case 1:
-                GameObject enemy1 = SpawnEnemy(this.greenBoulder);
-                Vector3 position = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
-                enemy1.transform.position = position;
-                GameObject enemy2 = SpawnEnemy(this.greenBoulder);
-                Vector3 position2 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, 10f));
+                enemy1 = SpawnEnemy(this.greenBoulder);
+                position1 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
+                enemy1.transform.position = position1;
+
+                enemy2 = SpawnEnemy(this.greenBoulder);
+                position2 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.2f, 10f));
                 enemy2.transform.position = position2;
-                GameObject enemy3 = SpawnEnemy(this.greenBoulder);
-                Vector3 position3 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+
+                enemy3 = SpawnEnemy(this.greenBoulder);
+                position3 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
                 enemy3.transform.position = position3;
+
                 break;
             case 2:
-                GameObject enemy4 = SpawnEnemy(this.redPage);
-                Vector3 position4 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
-                enemy4.transform.position = position4;
-                GameObject enemy5 = SpawnEnemy(this.redPage);
-                Vector3 position5 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, 10f));
-                enemy5.transform.position = position5;
-                GameObject enemy6 = SpawnEnemy(this.redPage);
-                Vector3 position6 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
-                enemy6.transform.position = position6;
+                enemy1 = SpawnEnemy(this.redPage);
+                position1 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
+                enemy1.transform.position = position1;
+
+                enemy2 = SpawnEnemy(this.redPage);
+                position2 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.2f, 10f));
+                enemy2.transform.position = position2;
+
+                enemy3 = SpawnEnemy(this.redPage);
+                position3 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                enemy3.transform.position = position3;
+
                 break;
             case 3:
-                GameObject enemy7 = SpawnEnemy(this.blueBlade);
-                Vector3 position7 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
-                enemy7.transform.position = position7;
-                GameObject enemy8 = SpawnEnemy(this.blueBlade);
-                Vector3 position8 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, 10f));
-                enemy8.transform.position = position8;
-                GameObject enemy9 = SpawnEnemy(this.blueBlade);
-                Vector3 position9 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
-                enemy9.transform.position = position9;
+                enemy1 = SpawnEnemy(this.blueBlade);
+                position1 = this.mainCam.ViewportToWorldPoint(new Vector3(0.25f, 1.1f, 10f));
+                enemy1.transform.position = position1;
+
+                enemy2 = SpawnEnemy(this.blueBlade);
+                position2 = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.2f, 10f));
+                enemy2.transform.position = position2;
+
+                enemy3 = SpawnEnemy(this.blueBlade);
+                position3 = this.mainCam.ViewportToWorldPoint(new Vector3(0.75f, 1.1f, 10f));
+                enemy3.transform.position = position3;
+
                 break;
         }
     }
@@ -96,22 +117,40 @@ public class EnemySpawnBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!bossMode)
-        {
-            this.totalTime += Time.deltaTime;
-            this.timer += Time.deltaTime;
-            if (this.timer >= this.spawnInterval)
-            {
-                this.timer = 0f;
-                this.DespawnFleet();
-                int spawnIndex = Random.Range(0, 4);
-                this.SpawnFleet(spawnIndex);
-            }
+        this.timer += Time.deltaTime;
 
-            if(this.totalTime >= 120f)
+        if (this.waveIsActive)
+        {
+            if (this.waveNumber == this.bossWaveNumber)
             {
                 this.boss.SetActive(true);
+                this.boss.transform.position = this.mainCam.ViewportToWorldPoint(new Vector3(-0.8f, 1.1f, 10f));
                 this.bossMode = true;
+            }
+
+            if (!this.bossMode)
+            {
+                if (this.timer >= this.waveLength)
+                {
+                    this.timer = 0f;
+                    this.waveIsActive = false;
+                }
+
+                if (this.enemyList.Count == 0)
+                {
+                    int spawnIndex = Random.Range(0, 4);
+                    this.SpawnFleet(spawnIndex);
+                }
+            }
+        }
+
+        else
+        {
+            if(this.timer >= this.waveInterval)
+            {
+                this.timer = 0f;
+                this.waveNumber += 1;
+                this.waveIsActive = true;
             }
         }
     }

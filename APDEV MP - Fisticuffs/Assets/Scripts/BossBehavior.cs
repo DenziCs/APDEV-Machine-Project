@@ -5,8 +5,15 @@ using UnityEngine;
 public class BossBehavior : MonoBehaviour
 {
     [SerializeField] private float speed;
-    private float endPositionY = 3.05f;
+    [SerializeField] private Camera mainCam;
+    private float endPositionY;
     private bool isDescending = true;
+
+    void Start()
+    {
+        Vector3 endPosition = this.mainCam.ViewportToWorldPoint(new Vector3(0f, 0.8f, 0f));
+        this.endPositionY = endPosition.y;
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,6 +31,11 @@ public class BossBehavior : MonoBehaviour
                 }
 
                 this.gameObject.transform.position = currentPosition;
+            }
+
+            else
+            {
+
             }
         }
     }
