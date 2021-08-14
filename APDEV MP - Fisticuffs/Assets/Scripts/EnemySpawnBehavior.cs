@@ -14,12 +14,12 @@ public class EnemySpawnBehavior : MonoBehaviour
     [SerializeField] private GameObject blueBlade;
     [SerializeField] private float waveLength = 25f;
     [SerializeField] private float waveInterval = 5f;
-    [SerializeField] private int bossWaveNumber;
 
     public List<GameObject> enemyList;
     private float timer = 0f;
     
     private int waveNumber = 1;
+    private int bossWaveNumber = CheatsHandling.bossWaveNumber;
     private int killCount = 0;
     private bool waveIsActive = true;
     private bool bossMode = false;

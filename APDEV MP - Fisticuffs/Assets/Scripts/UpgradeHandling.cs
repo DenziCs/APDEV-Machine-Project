@@ -10,7 +10,7 @@ public class UpgradeHandling : MonoBehaviour
     [SerializeField] private Gold goldHandler;
     [SerializeField] private Text maxMessage;
 
-    private int upgradeCountFR = 0;
+    private int upgradeCountFR = CheatsHandling.rateOfFire;
     private float timer = 0f;
     private bool messageIsUp = false;
 
