@@ -14,7 +14,7 @@ public class Gold : MonoBehaviour
 
     public bool UseGold(int cost)
     {
-        if(cost < totalGold)
+        if(cost > totalGold)
         {
             brokeMessage.gameObject.SetActive(true);
             messageIsUp = true;
