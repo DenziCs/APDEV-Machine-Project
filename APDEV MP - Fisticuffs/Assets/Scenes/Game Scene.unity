@@ -1261,6 +1261,118 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806666787}
   m_CullTransparentMesh: 1
+--- !u!1001 &853581755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 416836244495986366, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 416836244495986366, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200690491402732974, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: goldHandler
+      value: 
+      objectReference: {fileID: 1799511775}
+    - target: {fileID: 2200690491402732974, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: scoreHandler
+      value: 
+      objectReference: {fileID: 1799511780}
+    - target: {fileID: 2200690491402732974, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: spawnBehavior
+      value: 
+      objectReference: {fileID: 1799511777}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004343996415475075, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832773627517682542, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_Name
+      value: Great Verdant Asteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832773627517682542, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832773627517682542, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+      propertyPath: m_TagString
+      value: EnemyShip
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+--- !u!1 &853581756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7832773627517682542, guid: 2e14d1ebb094c6e46b68bd441519fc4f, type: 3}
+  m_PrefabInstance: {fileID: 853581755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &853581757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853581756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2637fae794c705f44acf1cdf89324e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.8
+  mainCam: {fileID: 1447492567}
 --- !u!1 &941167641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,13 +2500,13 @@ MonoBehaviour:
   mainCam: {fileID: 1447492567}
   goldHandler: {fileID: 1799511775}
   scoreHandler: {fileID: 1799511780}
-  boss: {fileID: 0}
+  boss: {fileID: 853581756}
   greenBoulder: {fileID: 453283252}
   redPage: {fileID: 152779967}
   blueBlade: {fileID: 261604279}
   waveLength: 25
   waveInterval: 5
-  bossWaveNumber: 0
+  bossWaveNumber: 1
   enemyList: []
 --- !u!114 &1799511778
 MonoBehaviour:

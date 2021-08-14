@@ -128,7 +128,7 @@ public class EnemySpawnBehavior : MonoBehaviour
             if (this.waveNumber == this.bossWaveNumber)
             {
                 this.boss.SetActive(true);
-                this.boss.transform.position = this.mainCam.ViewportToWorldPoint(new Vector3(-0.8f, 1.1f, 10f));
+                // this.boss.transform.position = this.mainCam.ViewportToWorldPoint(new Vector3(0.5f, 1.1f, 10f));
                 this.bossMode = true;
             }
 
