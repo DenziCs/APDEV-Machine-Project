@@ -27,7 +27,7 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        y += speed * Time.deltaTime;
-        this.transform.position = new Vector3(this.transform.position.x, y * direction, this.transform.position.z);
+        y += speed * Time.deltaTime * direction;
+        this.transform.position = new Vector3(this.transform.position.x, y, this.transform.position.z);
     }
 }
