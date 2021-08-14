@@ -58,7 +58,7 @@ public class SwipeDetector : MonoBehaviour
         }
 
         //check if cross deadzone
-        if (swipeDelta.magnitude > 100)
+        if (swipeDelta.magnitude > 70)
         {
             //check direction
             float x = swipeDelta.x;

@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 0.46153846
+  m_AspectRatio: 0.56374115
 --- !u!114 &180028809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1731,6 +1731,7 @@ GameObject:
   - component: {fileID: 1267899895}
   - component: {fileID: 1267899897}
   - component: {fileID: 1267899896}
+  - component: {fileID: 1267899898}
   m_Layer: 5
   m_Name: Current Weapon
   m_TagString: Untagged
@@ -1777,7 +1778,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4265761cc2b548b45ab9826fc97b5c29, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1795,6 +1796,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267899894}
   m_CullTransparentMesh: 1
+--- !u!114 &1267899898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267899894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06205c6ffe6e0954b8b6b6f243528697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swipeControls: {fileID: 1799511783}
+  weaponType: 0
+  paperIcon: {fileID: 21300000, guid: 4265761cc2b548b45ab9826fc97b5c29, type: 3}
+  rockIcon: {fileID: 21300000, guid: 08b82e435723b6348ab5554b5e64217d, type: 3}
+  scissorIcon: {fileID: 21300000, guid: 3d9e3bd6ca1ed9349b087b72c084b18a, type: 3}
 --- !u!1 &1377295483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,6 +2584,7 @@ GameObject:
   - component: {fileID: 1799511780}
   - component: {fileID: 1799511775}
   - component: {fileID: 1799511782}
+  - component: {fileID: 1799511783}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2623,7 +2642,6 @@ MonoBehaviour:
   blueBlade: {fileID: 261604279}
   waveLength: 25
   waveInterval: 5
-  bossWaveNumber: 5
   enemyList: []
 --- !u!114 &1799511778
 MonoBehaviour:
@@ -2701,6 +2719,26 @@ MonoBehaviour:
   healthBar: {fileID: 790329559}
   healthAmount: 10
   healthMax: 10
+--- !u!114 &1799511783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799511774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89bdd302cf39dc54bbf29ea9daca6ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swipeLeft: 0
+  swipeRight: 0
+  tap: 0
+  swipeUp: 0
+  swipeDown: 0
+  isDragging: 0
+  startTouch: {x: 0, y: 0}
+  swipeDelta: {x: 0, y: 0}
 --- !u!1 &1844396437
 GameObject:
   m_ObjectHideFlags: 0
