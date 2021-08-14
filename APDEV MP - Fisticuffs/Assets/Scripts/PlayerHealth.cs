@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private EndGame endgameHandler;
     [SerializeField] private Image healthBar;
     public float healthAmount = 3;
     public float healthMax = 3;
@@ -13,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
-            //game over
+            endgameHandler.OnPlayerLose();
         }
     }
 
