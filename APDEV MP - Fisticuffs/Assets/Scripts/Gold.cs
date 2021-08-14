@@ -42,7 +42,7 @@ public class Gold : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 2f)
             {
-                brokeMessage.gameObject.SetActive(true);
+                brokeMessage.gameObject.SetActive(false);
                 messageIsUp = false;
             }
         }
