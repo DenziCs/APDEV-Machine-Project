@@ -6,6 +6,7 @@ public class BossBehavior : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private Camera mainCam;
+    [SerializeField] private BossCollisionDetection collisionHandler;
     private float endPositionY;
     private bool isDescending = true;
 
@@ -35,6 +36,7 @@ public class BossBehavior : MonoBehaviour
                 if (currentPosition.y <= endPositionY)
                 {
                     currentPosition.y = this.endPositionY;
+                    collisionHandler.StartFight();
                     this.isDescending = false;
                 }
 
