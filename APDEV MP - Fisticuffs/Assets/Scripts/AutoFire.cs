@@ -6,6 +6,7 @@ public class AutoFire : MonoBehaviour
 {
     [SerializeField] private GameObject barrel;
     [SerializeField] private GameObject bulletTemplate;
+    [SerializeField] private WeaponSwitch weaponSwitch;
 
     public List<GameObject> bulletPool;
     private float timer = 0f;
@@ -46,6 +47,18 @@ public class AutoFire : MonoBehaviour
         {
             this.timer = 0f;
             SpawnBullet(bulletTemplate, pos);
+        }
+        if (weaponSwitch.weaponType == 0)
+        {
+            bulletTemplate.tag = "BulletPaper";
+        }
+        if (weaponSwitch.weaponType == 1)
+        {
+            bulletTemplate.tag = "BulletRock";
+        }
+        if (weaponSwitch.weaponType == 2)
+        {
+            bulletTemplate.tag = "BulletPaper";
         }
     }
 }

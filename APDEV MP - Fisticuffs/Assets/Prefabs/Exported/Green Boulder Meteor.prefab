@@ -162,6 +162,7 @@ MonoBehaviour:
   spawnBehavior: {fileID: 0}
   goldHandler: {fileID: 0}
   scoreHandler: {fileID: 0}
+  diesToTag: BulletPaper
 --- !u!114 &2002498286646096849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 3817303649887880119}
   bulletTemplate: {fileID: 3625910968263281632}
+  weaponSwitch: {fileID: 0}
   bulletPool: []
   fireRate: 3
 --- !u!1001 &4613429563156561562

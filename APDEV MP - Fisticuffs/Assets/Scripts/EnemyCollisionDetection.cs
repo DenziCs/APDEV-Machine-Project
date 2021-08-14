@@ -7,10 +7,11 @@ public class EnemyCollisionDetection : MonoBehaviour
     [SerializeField] private EnemySpawnBehavior spawnBehavior;
     [SerializeField] private Gold goldHandler;
     [SerializeField] private Score scoreHandler;
+    [SerializeField] private string diesToTag;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "PlayerBullet")
+        if (other.tag == diesToTag)
         {
             spawnBehavior.DespawnEnemy(this.gameObject);
             goldHandler.GainGold(5);

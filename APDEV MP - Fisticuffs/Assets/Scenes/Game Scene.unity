@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 0.5625
+  m_AspectRatio: 0.5641026
 --- !u!114 &180028809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2925,6 +2925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 1544364741}
   bulletTemplate: {fileID: 119429312}
+  weaponSwitch: {fileID: 1267899898}
   bulletPool: []
   fireRate: 1
 --- !u!114 &1799511780

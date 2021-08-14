@@ -162,6 +162,7 @@ MonoBehaviour:
   spawnBehavior: {fileID: 0}
   goldHandler: {fileID: 0}
   scoreHandler: {fileID: 0}
+  diesToTag: BulletScissor
 --- !u!114 &3942058348629089363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 1880699786818758875}
   bulletTemplate: {fileID: 4278573283354510475}
+  weaponSwitch: {fileID: 0}
   bulletPool: []
   fireRate: 3
 --- !u!1001 &5275800753824297457
